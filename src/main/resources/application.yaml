@@ -1,0 +1,26 @@
+bot:
+  token: ${BOT_TOKEN}
+  username: abylalkhan_bot
+  admins: ${BOT_ADMINS}
+  admin-password: ${BOT_ADMIN_PASSWORD}
+
+aws:
+  s3:
+    bucket: abylalkhan-telegram-bot
+    region: eu-north-1
+  credentials:
+    access-key: ${AWS_ACCESS_KEY}
+    secret-key: ${AWS_SECRET_KEY}
+
+spring:
+  application:
+    name: bot
+  datasource:
+    url: ${DB_URL}
+    username: postgres
+    password: ${DB_PASSWORD}
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: false
