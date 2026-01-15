@@ -1,7 +1,7 @@
-package com.taspa.studios.bot.state;
+package com.taspa.studios.bot.handlers.state;
 
 import com.taspa.studios.bot.enums.BotState;
-import com.taspa.studios.bot.enums.Command;
+import com.taspa.studios.bot.enums.command.Command;
 import com.taspa.studios.bot.message.MessageService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;

@@ -1,8 +1,8 @@
-package com.taspa.studios.bot.state;
+package com.taspa.studios.bot.handlers.state;
 
 import com.taspa.studios.bot.bot.BotProperties;
 import com.taspa.studios.bot.enums.BotState;
-import com.taspa.studios.bot.enums.Command;
+import com.taspa.studios.bot.enums.command.Command;
 import com.taspa.studios.bot.message.MessageService;
 import com.taspa.studios.bot.services.FileStorageService;
 import com.taspa.studios.bot.services.UserStateService;

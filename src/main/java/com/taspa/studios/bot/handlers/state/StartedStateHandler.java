@@ -1,8 +1,8 @@
-package com.taspa.studios.bot.state;
+package com.taspa.studios.bot.handlers.state;
 
 import com.taspa.studios.bot.bot.BotProperties;
 import com.taspa.studios.bot.enums.BotState;
-import com.taspa.studios.bot.enums.Command;
+import com.taspa.studios.bot.enums.command.Command;
 import com.taspa.studios.bot.message.MessageService;
 import com.taspa.studios.bot.services.UserStateService;
 import lombok.RequiredArgsConstructor;
@@ -23,15 +23,15 @@ public class StartedStateHandler implements StateHandler {
 	}
 
 	@Override
-	public void handle(Long chatId, Command command, Update update) {
+	public void handle(Long userId, Command command, Update update) {
 		if (command == Command.ADMIN_PANEL) {
-			if (botProperties.getAdmins().contains(chatId)) {
-				userStateService.setState(chatId, BotState.WAITING_FOR_PASSWORD);
-				messageService.sendText(chatId, "Please enter the password:\nYou can go back using command - /back");
+			if (botProperties.getAdminUsers().contains(userId)) {
+				userStateService.setState(userId, BotState.WAITING_FOR_PASSWORD);
+				messageService.sendText(userId, "Please enter the password:\nYou can go back using command - /back");
 				return;
 			}
 
-			messageService.sendText(chatId, "Sorry, you are not in the admins list.");
+			messageService.sendText(userId, "Sorry, you are not in the admins list.");
 		}
 	}
 

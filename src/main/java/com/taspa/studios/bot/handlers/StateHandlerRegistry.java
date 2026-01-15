@@ -1,6 +1,7 @@
-package com.taspa.studios.bot.state;
+package com.taspa.studios.bot.handlers;
 
 import com.taspa.studios.bot.enums.BotState;
+import com.taspa.studios.bot.handlers.state.StateHandler;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -18,6 +19,7 @@ public class StateHandlerRegistry {
 	}
 
 	public StateHandler getHandler(BotState state) {
+		if (!handlers.containsKey(state)) return null;
 		return handlers.get(state);
 	}
 

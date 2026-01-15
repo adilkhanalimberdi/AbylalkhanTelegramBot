@@ -27,7 +27,7 @@ public class User {
 	@Column(name = "chat_id")
 	private Long chatId;
 
-	@Column(name = "state")
+	@Column(name = "state", nullable = false)
 	@Enumerated(EnumType.STRING)
 	private BotState state;
 

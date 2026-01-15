@@ -59,6 +59,7 @@ public class MessageFormatter {
 				? "<a href=\"https://www.instagram.com/%s\">@%s</a>"
 				.formatted(user.getInstagramUsername(), user.getInstagramUsername())
 				: "Not set";
+		String[] createdDateParts = user.getCreatedDate().toLocalDate().toString().split("-");
 
 		return """
 				<b>Information about User</b>
@@ -72,7 +73,7 @@ public class MessageFormatter {
 					user.getChatId(),
 					user.getUsername(),
 					instagram,
-					user.getCreatedDate().toLocalDate(),
+					createdDateParts[2] + "." + createdDateParts[1] + "." + createdDateParts[0],
 					user.isAdmin() ? "Yes" : "No");
 	}
 

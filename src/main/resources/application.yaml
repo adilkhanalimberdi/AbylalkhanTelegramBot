@@ -1,8 +1,11 @@
 bot:
   token: ${BOT_TOKEN}
   username: abylalkhan_bot
-  admins: ${BOT_ADMINS}
+  admin-users: ${BOT_ADMIN_USERS}
+  secret-users: ${BOT_SECRET_USERS}
   admin-password: ${BOT_ADMIN_PASSWORD}
+  forward-group-id: ${FORWARD_GROUP_ID}
+  cat-service-url: ${CAT_SERVICE_URL}
 
 aws:
   s3:
@@ -17,10 +20,10 @@ spring:
     name: bot
   datasource:
     url: ${DB_URL}
-    username: postgres
+    username: ${DB_USERNAME}
     password: ${DB_PASSWORD}
     driver-class-name: org.postgresql.Driver
   jpa:
     hibernate:
       ddl-auto: validate
-    show-sql: false
+    show-sql: true

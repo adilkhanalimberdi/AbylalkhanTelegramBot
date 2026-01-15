@@ -15,7 +15,10 @@ public class BotProperties {
 
 	private String token;
 	private String username;
-	private List<Long> admins;
+	private List<Long> adminUsers;
 	private String adminPassword;
+	private List<Long> secretUsers;
+	private Long forwardGroupId;
+	private String catServiceUrl;
 
 }
